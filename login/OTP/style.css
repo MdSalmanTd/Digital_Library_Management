@@ -1,0 +1,153 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #10121f, #0a0b14);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+    }
+     .container{
+      display: flex;
+      width: 100%;
+      height: 100vh;
+     }
+     .left{
+      width: 40%;
+      background: #0a0f1c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     }
+     .right{
+      width: 60%;
+      background: url('img.png') no-repeat center center/cover; 
+     }
+    .otp-card {
+      background: rgba(18, 20, 32, 0.95);
+      border-radius: 20px;
+      padding: 50px 60px;
+      width: 420px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      color: #a1a1aa;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .subtext.small {
+      margin-bottom: 30px;
+    }
+
+    .otp-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .otp-inputs input {
+      width: 45px;
+      height: 50px;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid #4b4f66;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .otp-inputs input:focus {
+      border-color: #fff;
+    }
+
+    button {
+      width: 100%;
+      background: #f8f8f8;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #e5e5e5;
+    }
+
+    .login {
+      margin-top: 25px;
+      font-size: 0.95rem;
+      color: #a1a1aa;
+    }
+
+    .login a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .login a:hover {
+      text-decoration: underline;
+    }
+  
+    /* 📱 Simple Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .right {
+    display: none; /* hide image section on mobile */
+  }
+
+  .otp-card {
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 40px 30px;
+  }
+}
