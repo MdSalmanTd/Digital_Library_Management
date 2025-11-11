@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOKSHELF</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <link rel="stylesheet" href="./Css/style.css" />
+</head>
+
+<body>
+
+  <nav class="sidebar">
+    <div class="logo">
+      <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">
+      <h2>BOOKSHELF</h2>
+    </div>
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="#">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Search</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          <i class="fa-solid fa-swatchbook"></i>
+          <span>My Self</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Request</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="top-nav">
+    <div class="searchbar">
+      <div id="select">
+        <div class="select-dropdown">
+          <span>ALL</span>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <ul class="options-list">
+          <li class="options">Author</li>
+          <li class="options">Title</li>
+          <li class="options">Text</li>
+          <li class="options">Subject</li>
+        </ul>
+      </div>
+
+      <div class="search-input">
+        <input type="text" placeholder="Search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+    <div class="langbar">
+      <div class="lang-dropdown">
+        <p>Language</p>
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+      <ul class="lang-list">
+        <li class="lang-item">English</li>
+        <li class="lang-item">French</li>
+        <li class="lang-item">German</li>
+        <li class="lang-item">Spanish</li>
+      </ul>
+    </div>
+    <div class="time">
+      <div class="time-display">
+        <i class="fa-regular fa-clock"></i>
+        <p id="time-now">00:00 AM</p>
+      </div>
+      <div class="date-display">
+        <i class="fa-regular fa-calendar"></i>
+        <p id="date-today">01-Jan-1970</p>
+      </div>
+    </div>
+    <div class="profile-container">
+      <div class="profile">
+        <img id="profile-pic" src="./Assets/Images/b7b6bb2c53f083ca7beb2acab7ee8a29.jpg" alt="user-profile" />
+        <p>Meow</p>
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+      <ul class="profile-options">
+        <li class="profile-item">View Profile</li>
+        <li class="profile-item">Logout</li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <h1>
+      Good Morning, <span>Meow</span>
+    </h1>
+
+    <div class="up-slider">
+      <div class="text-slide">
+        <h2>Today’s Quote</h2>
+        <p>“There is more treasure in books than in all the pirate’s loot on Treasure Island.” -Walt Disney</p>
+        <div class="slide-buttons">
+          <button id="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+          <button id="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="arr-slide">
+        <p>New Arrivals</p>
+        <div class="arr-img">
+          <img src="./Assets/Images/img.png" />
+          <img src="./Assets/Images/img.png" alt="reading-illustration" />
+          <img src="./Assets/Images/img.png" alt="reading-illustration" />
+          <img src="./Assets/Images/img.png" alt="reading-illustration" />
+          <img src="./Assets/Images/img.png" alt="reading-illustration" />
+          <img src="./Assets/Images/img.png" alt="reading-illustration" />
+        </div>
+      </div>
+    </div>
+
+    <div class="popular-books">
+      <div class="popular-header">
+        <h2>Popular Books</h2>
+        <a href="#">Show All</a>
+      </div>
+      <div class="book-cards">
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 1" />
+          <h3>Origin - By Dan Brown</h3>
+          <p>Thriller / Mystery</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 2" />
+          <h3>Book Title 2</h3>
+          <p>Author 2</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 3" />
+          <h3>Book Title 3</h3>
+          <p>Author 3</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="recommended-books">
+      <div class="popular-header">
+        <h2>Recommended Books</h2>
+        <a href="#">Show All</a>
+      </div>
+      <div class="book-cards">
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 1" />
+          <h3>Origin - By Dan Brown</h3>
+          <p>Thriller / Mystery</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 2" />
+          <h3>Book Title 2</h3>
+          <p>Author 2</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 3" />
+          <h3>Book Title 3</h3>
+          <p>Author 3</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+        <div class="book-card">
+          <img src="./Assets/Images/img.png" alt="Book 4" />
+          <h3>Book Title 4</h3>
+          <p>Author 4</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+
+</html>
