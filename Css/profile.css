@@ -1,0 +1,170 @@
+.profile-main-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.ppc-section {
+    display: flex;
+    width: 40%;
+    order: 2;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-pic-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile-pic-section img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+}
+
+#upload-btn {
+    display: none;
+}
+
+.custom-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.custom-upload-label:hover {
+    opacity: 0.85;
+}
+
+.library-card-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.library-card-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.library-card-section img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.profile-info-section {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    width: 40%;
+    flex: 1;
+    padding: 20px;
+}
+.profile-info-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 5px 10px 0 10px;
+}
+form input, form textarea {
+    background-color: #151b23;
+    padding: 10px;
+    min-width:100px;
+    border: 1px solid #3d444d;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+textarea {
+    min-height: 100px;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border: 1px solid #007BFF;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #28A745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: #218838;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media (max-width: 1440px) {
+    .profile-main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ppc-section, .profile-info-section {
+        width: 90%;
+    }
+
+    .ppc-section {
+        order: 1;
+        align-items: center;
+    }
+    .profile-info-section {
+        order: 2;
+    }
+    
+    .library-card-section img {
+        width: 100%;
+        height: auto;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

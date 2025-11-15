@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+<link rel="stylesheet" href="./Css/registration.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="left">
+<div class="card">
+    <div class="logo">
+      <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">
+      <h2>BookWise</h2>
+    </div>
+
+    <h3>Create Your Library Account</h3>
+    <p class="subtext">
+      Please complete all fields and upload a valid university ID to gain access to the library.
+    </p>
+
+    <form>
+      <label>Full name</label>
+      <input type="text" placeholder="Adrian Hajdin" required />
+
+      <label>University Email</label>
+      <input type="email" placeholder="adrian@jsmastery.pro" required />
+
+      <label>University ID No</label>
+      <input type="text" placeholder="eg: 0435*******36" required />
+
+      <label>Password</label>
+      <input type="password" placeholder="At least 8 characters long" required />
+
+      
+    <input type="file" id="upload-btn" required>
+    <label for="upload-btn" class="custom-upload-label">
+    <i class="fa-solid fa-upload"></i>
+     Upload Photo
+    </label>
+
+      <button id="submit" type="submit">
+       Sign Up
+     </button>
+    </form>
+
+    <div class="login">
+      Have an account already? <a href="./login.html">Login</a>
+    </div>
+    <div class="img"></div>
+  </div>
+    </div>
+
+    <div class="right"></div>
+  </div>
+  <script src="./Js/registration.js"></script>
+</body>
+</html>

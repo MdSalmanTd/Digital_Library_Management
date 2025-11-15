@@ -1,0 +1,36 @@
+.popular-books{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.book-cards{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.book-card img{
+    max-width: 100px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.book-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    width: 100px;    
+    height: auto; 
+}
+
+.book-card h3{
+    width: 50%;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #b7f7d0;
+}

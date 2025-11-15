@@ -1,0 +1,205 @@
+.bdcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-details-container{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.book-cover{
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.book-cover img{
+    border-radius: 8px;
+    background-color: #ffffff09;
+    padding: 20px 30px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.book-information{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.book-information h2{
+    font-size: 28px;
+}
+
+.book-information h3{
+    font-size: 16px;
+    line-height: 1.5;
+}
+.book-information h4{
+    font-size: 14px;
+    color: #ccc;
+}
+.book-microinfo{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+.fa-star{
+    color: #f3bf02;
+}
+.availability-container{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.availability{
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.availability h2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.status-location{
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-location h2{
+    font-size: 16px;
+}
+
+.book-action{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.book-action button{
+    padding: 20px 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#borrow-btn{
+    background-color: #F27851;
+}
+.read-btn{
+    background-color: #4CAF50;
+}
+
+.read-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+#borrow-btn:hover{
+    background-color: #d96b45;
+}
+.read-btn:hover{
+    background-color: #45a049;
+}
+
+
+
+
+.about-auth{
+    flex:3;
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #ffffff09;
+}
+.about-auth h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.about-auth p{
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.auth-name-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.auth-name-img img{
+    max-width: 150px;
+    height: auto;
+}
+
+.about-book{
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.about-book h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-header{
+    width: 100%;
+    background-color: #ffffff09; 
+    border-radius: 6px;
+    
+}
+
+.about-header h3{
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: #F27851 2px solid;
+    margin-bottom: 10px;
+    color: #F27851;  
+}
+
+.about-content{
+    margin-top: 10px;
+    width: 90%;
+}
+
+.about-content p{
+    font-size: 14px;
+    line-height: 2;
+    color: #ddd;
+}

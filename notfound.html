@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="stylesheet" href="./Css/notfound.css">
+</head>
+<body>
+     <nav class="sidebar">
+      <div class="logo">
+        <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="" />
+        <h2>BOOKSHELF</h2>
+      </div>
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="./index.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./search.html">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./yourshelf.html">
+            <i class="fa-solid fa-swatchbook"></i>
+            <span>My Self</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="./aihelper.html">
+            <i class="fa-brands fa-codepen"></i>
+            <span>Ai Helper</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="top-nav">
+      <div class="searchbar">
+        <div id="select">
+          <div class="select-dropdown">
+            <span>ALL</span>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+
+          <ul class="options-list">
+            <li class="options">Author</li>
+            <li class="options">Title</li>
+            <li class="options">Text</li>
+            <li class="options">Subject</li>
+          </ul>
+        </div>
+
+        <div class="search-input">
+          <input type="text" placeholder="Search" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="langbar">
+        <div class="lang-dropdown">
+          <p>Language</p>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <ul class="lang-list">
+          <li class="lang-item">English</li>
+          <li class="lang-item">French</li>
+          <li class="lang-item">German</li>
+          <li class="lang-item">Spanish</li>
+        </ul>
+      </div>
+      <div class="time">
+        <div class="time-display">
+          <i class="fa-regular fa-clock"></i>
+          <p id="time-now">00:00 AM</p>
+        </div>
+        <div class="date-display">
+          <i class="fa-regular fa-calendar"></i>
+          <p id="date-today">01-Jan-1970</p>
+        </div>
+      </div>
+      <div class="profile-container">
+        <div class="profile">
+          <img
+            id="profile-pic"
+            src="./Assets/Images/b7b6bb2c53f083ca7beb2acab7ee8a29.jpg"
+            alt="user-profile"
+          />
+          <p>Meow</p>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <ul class="profile-options">
+          <li class="profile-item">View Profile</li>
+          <li class="profile-item">Logout</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+        <div class="notfound-container">
+            <h1>No Results</h1>
+            <img src="./Assets/Images/dribbble_1.gif" alt="404 Not Found">
+            <h2>Book Not Found</h2>
+            <p>Sorry, the book you are looking for does not exist.</p>
+            <a href="./index.html" class="home-button">Go to Home</a>
+        </div>
+    </main>
+</body>
+</html>

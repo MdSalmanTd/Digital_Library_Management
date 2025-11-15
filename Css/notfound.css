@@ -1,0 +1,34 @@
+.notfound-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #fcfcfc;
+}
+.notfound-container h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.notfound-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.home-button:hover {
+    opacity: 0.8;
+}
