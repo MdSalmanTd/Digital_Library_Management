@@ -1,4 +1,4 @@
-# Digital Library Management (BOOKSHELF / BookWise)
+# BOOKSHELF – Digital Library Management
 
 A library website made with HTML, CSS, JavaScript, PHP and MySQL.
 
@@ -12,28 +12,36 @@ A library website made with HTML, CSS, JavaScript, PHP and MySQL.
 4. Open <http://localhost/Digital_Library_Management/registration.php> and create an account.
 5. On the OTP page the code is shown in a green box (XAMPP cannot send email). Type it in, then log in.
 
+## Demo accounts
+
+`database/library.sql` also creates two ready-to-use accounts (already verified, no OTP needed):
+
+| Role | Email | University ID | Password |
+|---|---|---|---|
+| Librarian | `librarian@bookshelf.local` | `LIB-0001` | `Librarian@123` |
+| Student | `student@bookshelf.local` | `STU-0001` | `Student@123` |
+
+These are for testing only. Change the passwords (or delete the accounts) before putting the site online.
+
+Librarians get a **Librarian** link in the sidebar with:
+
+- **Dashboard**: book, member and loan numbers, overdue books and the latest loans
+- **Books**: add, edit (with cover upload) and delete books, and set how many copies there are
+- **Members**: verify accounts, make someone a librarian (or a normal member again) and remove accounts
+- **Loans**: see borrowed / overdue / returned books, mark a book returned, or give 7 more days
+
+If your database was made with an older `library.sql` (before librarians existed), import
+`database/librarian.sql` once instead. It adds the `role` column and the demo accounts and keeps all your data.
+
 The database settings are in the `.env` file (`connection.php` reads them). If your MySQL user or
-password is not `root` with an empty password, change them there. If `.env` is missing, copy `.env.example` to `.env`.
-
-## How to put it online (InfinityFree, free)
-
-1. Sign up at <https://www.infinityfree.com>, click **Create Account** and pick a free subdomain
-   (for example `mylibrary.infinityfreeapp.com`).
-2. In the account's **Control Panel**, open **MySQL Databases** and create a database (for example `library`).
-   Write down the **MySQL host name** (like `sql123.infinityfree.com`), the **database name** (like `if0_12345678_library`),
-   the **user name** (like `if0_12345678`) and the **password** (shown on the account page in the client area).
-3. Click **phpMyAdmin** next to the database, then **Import**, choose `database/library.sql` and press **Go**.
-4. Put those four values in the `.env` file instead of `localhost` / `root`.
-5. Open **File Manager**, go into the `htdocs` folder, delete the `index2.html` that is already there,
-   and upload all the project files and folders (not the `.git` folder) into `htdocs`.
-   Make sure the hidden files `.env` and `.htaccess` are uploaded too.
-6. Visit `https://your-subdomain.infinityfreeapp.com/registration.php`. A new subdomain can take a few hours to start working.
+password is not `root` with an empty password, change them there. If MySQL runs on a port other than
+3306 (the XAMPP Control Panel shows it next to MySQL), set `DB_PORT` to that number. If `.env` is missing, copy `.env.example` to `.env`.
 
 ## Files
 
 | File | What it does |
 | --- | --- |
-| `.env` | Database host, user, password and name (not uploaded to GitHub) |
+| `.env` | Database host, user, password, name and port (not uploaded to GitHub) |
 | `connection.php` | Reads `.env` and connects to the MySQL database (`$conn`) |
 | `check_login.php` | Sends visitors to the login page and loads `$user` |
 | `header.php` | Sidebar and top bar used by every page |
@@ -49,11 +57,18 @@ password is not `root` with an empty password, change them there. If `.env` is m
 | `yourshelf.php` | Your borrowed books, favorites, e-books, audio books |
 | `profile.php` | Edit your name, phone, bio and profile picture |
 | `aihelper.php` | AI Buddy: answers from the database (recommend, genres, summarize, search) |
-| `database/library.sql` | Creates the tables and adds the books |
+| `check_librarian.php` | Lets only librarians open the librarian pages |
+| `librarian_nav.php` | Tabs and messages at the top of the librarian pages |
+| `librarian.php` | Librarian dashboard |
+| `librarian_books.php` / `librarian_bookform.php` | List, add, edit and delete books |
+| `librarian_members.php` | Verify, promote and remove members |
+| `librarian_loans.php` | Mark books returned and extend due dates |
+| `database/library.sql` | Creates the tables and adds the books and the librarian account |
+| `database/librarian.sql` | Adds librarians to a database made with an older `library.sql` |
 
 ## Database tables
 
-- `users` – accounts (password is stored with `password_hash`)
+- `users` – accounts (password is stored with `password_hash`; `role` is `member` or `librarian`)
 - `books` – the library's books
 - `borrows` – who borrowed which book, when it is due, and when it was returned
 - `favorites` – books each user marked with the heart

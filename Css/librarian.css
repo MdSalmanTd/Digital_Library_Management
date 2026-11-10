@@ -1,0 +1,365 @@
+/* Librarian panel: dashboard, books, members and loans */
+.color {
+  color: #b7f7d0;
+}
+
+.lib-tabs,
+.lib-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.lib-tabs a,
+.lib-filters a {
+  display: block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: #20273854;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.lib-tabs a:hover,
+.lib-filters a:hover {
+  color: #b7f7d0;
+}
+
+.lib-tabs a.active,
+.lib-filters a.active {
+  background: #b7f7d0;
+  color: #0c0f19;
+  font-weight: 600;
+}
+
+.lib-filters a {
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* Number cards on the dashboard */
+.lib-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.lib-stat {
+  background: #1a1d2b;
+  border: 1px solid #292d3b;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.lib-stat i {
+  color: #b7f7d0;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.lib-stat p {
+  color: #9aa4b2;
+  font-size: 13px;
+}
+
+.lib-stat h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Boxes that hold the tables */
+.lib-panel {
+  background: #1a1d2b;
+  border: 1px solid #292d3b;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 24px;
+}
+
+.lib-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.lib-panel-header h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.lib-panel-header a,
+.lib-link {
+  color: #b7f7d0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.lib-panel-header a:hover,
+.lib-link:hover {
+  text-decoration: underline;
+}
+
+.lib-empty {
+  color: #9aa4b2;
+  font-size: 14px;
+}
+
+.lib-table-wrap {
+  overflow-x: auto;
+}
+
+.lib-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.lib-table th {
+  text-align: left;
+  color: #9aa4b2;
+  font-weight: 500;
+  padding: 10px;
+  border-bottom: 1px solid #292d3b;
+  white-space: nowrap;
+}
+
+.lib-table td {
+  padding: 10px;
+  border-bottom: 1px solid #292d3b;
+  vertical-align: middle;
+}
+
+.lib-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lib-table small {
+  color: #9aa4b2;
+}
+
+.lib-late {
+  color: #ffb4b4;
+}
+
+.lib-cover {
+  width: 40px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.lib-avatar {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.lib-formats i {
+  color: #9aa4b2;
+  margin-right: 6px;
+}
+
+.lib-actions {
+  white-space: nowrap;
+}
+
+.lib-actions form {
+  display: inline-flex;
+  gap: 6px;
+}
+
+/* Little coloured labels */
+.lib-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lib-badge.green {
+  background: #1f4d2b;
+  color: #b7f7d0;
+}
+.lib-badge.red {
+  background: #5c1f1f;
+  color: #ffb4b4;
+}
+.lib-badge.grey {
+  background: #3d444d;
+  color: #d6dbe1;
+}
+.lib-badge.blue {
+  background: #10325c;
+  color: #a9cdff;
+}
+
+/* Buttons */
+.lib-btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.lib-btn:hover {
+  opacity: 0.85;
+}
+
+.lib-btn.green {
+  background: #28a745;
+}
+.lib-btn.blue {
+  background: #007bff;
+}
+.lib-btn.red {
+  background: #c0392b;
+}
+.lib-btn.grey {
+  background: #555c66;
+}
+
+/* Search box + Add button */
+.lib-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.lib-find {
+  display: flex;
+  flex: 1;
+  max-width: 420px;
+  background: #20273854;
+  border: 1px solid #292d3b;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.lib-find input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.lib-find button {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  padding: 0 16px;
+  cursor: pointer;
+}
+
+/* Add / edit book form */
+.lib-form {
+  display: flex;
+  gap: 24px;
+}
+
+.lib-form-cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.lib-form-cover img {
+  width: 160px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #3d444d;
+}
+
+.lib-form-fields {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.lib-form-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #9aa4b2;
+}
+
+.lib-form-fields input,
+.lib-form-fields select,
+.lib-form-fields textarea {
+  background: #151b23;
+  border: 1px solid #3d444d;
+  border-radius: 6px;
+  color: white;
+  padding: 9px 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.lib-form-fields input:focus,
+.lib-form-fields select:focus,
+.lib-form-fields textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.lib-wide {
+  grid-column: 1 / -1;
+}
+
+.lib-checks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.lib-checks label {
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.lib-note {
+  color: #ffd98a;
+  font-size: 13px;
+}
+
+.lib-form-fields button.lib-btn {
+  padding: 11px;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .lib-form {
+    flex-direction: column;
+  }
+}

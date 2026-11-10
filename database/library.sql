@@ -1,4 +1,4 @@
--- BookWise / BOOKSHELF digital library
+-- BOOKSHELF digital library
 -- First create/select a database in phpMyAdmin, then use the Import tab with this file.
 
 DROP TABLE IF EXISTS favorites;
@@ -18,6 +18,7 @@ CREATE TABLE users (
   photo         VARCHAR(255) NOT NULL DEFAULT '',
   is_verified   TINYINT      NOT NULL DEFAULT 0,  -- 1 after the OTP is entered
   otp_code      VARCHAR(6)   DEFAULT NULL,
+  role          VARCHAR(20)  NOT NULL DEFAULT 'member',  -- 'member' or 'librarian'
   created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -125,3 +126,12 @@ VALUES
  'A Bangla novel by Humayun Ahmed, one of the most widely read Bangladeshi writers.',
  'Humayun Ahmed was a Bangladeshi novelist, dramatist and filmmaker, one of the most popular writers in Bangla literature.',
  '', '2025-10-10 09:00:00');
+
+-- Demo accounts (see README for the passwords)
+-- Librarian: manages books, members and loans
+-- Student:   a normal member who borrows books
+INSERT INTO users (full_name, email, university_id, password_hash, is_verified, role)
+VALUES ('Head Librarian', 'librarian@bookshelf.local', 'LIB-0001',
+        '$2y$12$ZYIQwwaRaZc8T0W29H62We2vNNRcH9KUP8au0rOKIjQcvrjBWZV26', 1, 'librarian'),
+       ('Demo Student', 'student@bookshelf.local', 'STU-0001',
+        '$2y$12$MvWM3uFIlSaP62jlL0EI.ekh/LD/lD68GrrTN/35neFl4XFyswsiG', 1, 'member');

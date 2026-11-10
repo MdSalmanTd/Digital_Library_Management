@@ -25,8 +25,6 @@ if (leftbtn && display) {
   });
 }
 
-
-
 const searchBy = document.querySelector("#search-by");
 const selectWrappers = document.querySelectorAll("#select");
 selectWrappers.forEach((wrapper) => {
@@ -50,6 +48,42 @@ if (searchIcon) {
   });
 }
 
+// The top bar dropdowns open on hover, and also on click (needed for touch screens)
+const dropdowns = [
+  { box: "#select", button: ".select-dropdown", items: ".options" },
+  { box: ".langbar", button: ".lang-dropdown", items: ".lang-item" },
+  { box: ".profile-container", button: ".profile", items: ".profile-item" },
+];
+
+function closeDropdowns() {
+  dropdowns.forEach((d) => {
+    document
+      .querySelectorAll(d.box)
+      .forEach((box) => box.classList.remove("open"));
+  });
+}
+
+dropdowns.forEach((d) => {
+  document.querySelectorAll(d.box).forEach((box) => {
+    const button = box.querySelector(d.button);
+    if (!button) return;
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const wasOpen = box.classList.contains("open");
+      closeDropdowns();
+      if (!wasOpen) box.classList.add("open");
+    });
+
+    // Choosing an option closes the list
+    box.querySelectorAll(d.items).forEach((item) => {
+      item.addEventListener("click", () => box.classList.remove("open"));
+    });
+  });
+});
+
+// Clicking anywhere else closes any open list
+document.addEventListener("click", closeDropdowns);
 
 const langwrap = document.querySelectorAll(".langbar");
 langwrap.forEach((wrapper) => {
@@ -63,11 +97,9 @@ langwrap.forEach((wrapper) => {
   });
 });
 
-
 function updateDateTime() {
   const now = new Date();
 
- 
   let hours = now.getHours();
   let minutes = now.getMinutes();
   let ampm = hours >= 12 ? "PM" : "AM";
@@ -78,13 +110,21 @@ function updateDateTime() {
 
   const timeString = `${hours}:${minutes} ${ampm}`;
 
-
-  
   const day = now.getDate().toString().padStart(2, "0");
 
   const monthNames = [
-    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
   const month = monthNames[now.getMonth()];
 
@@ -92,15 +132,10 @@ function updateDateTime() {
 
   const dateString = `${day}-${month}-${year}`;
 
-
   document.getElementById("time-now").textContent = timeString;
   document.getElementById("date-today").textContent = dateString;
 }
 
-
 setInterval(updateDateTime, 1000);
 
 updateDateTime();
-
-
-

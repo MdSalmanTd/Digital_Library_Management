@@ -61,75 +61,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register</title>
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-<link rel="stylesheet" href="./Css/registration.css">
-<link rel="stylesheet" href="./Css/message.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - BOOKSHELF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="./Css/registration.css">
+    <link rel="stylesheet" href="./Css/message.css">
 
-</head>
+  </head>
 
-<body>
-  <div class="container">
-    <div class="left">
-<div class="card">
-    <div class="logo">
-      <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">
-      <h2>BookWise</h2>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="card">
+          <div class="logo">
+            <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">
+            <h2>BOOKSHELF</h2>
+          </div>
+
+          <h3>Create Your Library Account</h3>
+          <p class="subtext">
+            Please complete all fields and upload a valid university ID to gain access to the library.
+          </p>
+
+          <?php if ($error != "") { ?>
+            <div class="error"><?php echo $error; ?></div>
+          <?php } ?>
+
+          <form method="post" enctype="multipart/form-data">
+            <label>Full name</label>
+            <input type="text" name="full_name" placeholder="Adrian Hajdin" value="<?php echo htmlspecialchars($full_name); ?>" required />
+
+            <label>University Email</label>
+            <input type="email" name="email" placeholder="adrian@jsmastery.pro" value="<?php echo htmlspecialchars($email); ?>" required />
+
+            <label>University ID No</label>
+            <input type="text" name="university_id" placeholder="eg: 0435*******36" value="<?php echo htmlspecialchars($university_id); ?>" required />
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="At least 8 characters long" minlength="8" required />
+
+            <input type="file" name="photo" id="upload-btn" accept="image/*" required>
+            <label for="upload-btn" class="custom-upload-label">
+              <i class="fa-solid fa-upload"></i>
+              <span id="upload-text">Upload Photo</span>
+            </label>
+
+            <button id="submit" type="submit">
+              Sign Up
+            </button>
+          </form>
+
+          <div class="login">
+            Have an account already? <a href="./login.php">Login</a>
+          </div>
+          <div class="img"></div>
+        </div>
+      </div>
+
+      <div class="right"></div>
     </div>
-
-    <h3>Create Your Library Account</h3>
-    <p class="subtext">
-      Please complete all fields and upload a valid university ID to gain access to the library.
-    </p>
-
-    <?php if ($error != "") { ?>
-      <div class="error"><?php echo $error; ?></div>
-    <?php } ?>
-
-    <form method="post" enctype="multipart/form-data">
-      <label>Full name</label>
-      <input type="text" name="full_name" placeholder="Adrian Hajdin" value="<?php echo htmlspecialchars($full_name); ?>" required />
-
-      <label>University Email</label>
-      <input type="email" name="email" placeholder="adrian@jsmastery.pro" value="<?php echo htmlspecialchars($email); ?>" required />
-
-      <label>University ID No</label>
-      <input type="text" name="university_id" placeholder="eg: 0435*******36" value="<?php echo htmlspecialchars($university_id); ?>" required />
-
-      <label>Password</label>
-      <input type="password" name="password" placeholder="At least 8 characters long" minlength="8" required />
-
-    <input type="file" name="photo" id="upload-btn" accept="image/*" required>
-    <label for="upload-btn" class="custom-upload-label">
-    <i class="fa-solid fa-upload"></i>
-     <span id="upload-text">Upload Photo</span>
-    </label>
-
-      <button id="submit" type="submit">
-       Sign Up
-     </button>
-    </form>
-
-    <div class="login">
-      Have an account already? <a href="./login.php">Login</a>
-    </div>
-    <div class="img"></div>
-  </div>
-    </div>
-
-    <div class="right"></div>
-  </div>
-  <script>
-    // Show the chosen file name on the upload button
-    document.getElementById("upload-btn").addEventListener("change", function () {
-      document.getElementById("upload-text").textContent = this.files[0] ? this.files[0].name : "Upload Photo";
-    });
-  </script>
-</body>
+    <script>
+      // Show the chosen file name on the upload button
+      document.getElementById("upload-btn").addEventListener("change", function () {
+        document.getElementById("upload-text").textContent = this.files[0] ? this.files[0].name : "Upload Photo";
+      });
+    </script>
+  </body>
 </html>

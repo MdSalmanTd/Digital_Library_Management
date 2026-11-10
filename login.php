@@ -35,50 +35,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     session_regenerate_id(true);
     $_SESSION['user_id'] = $found_user['id'];
-    header("Location: index.php");
+    // Librarians start on their dashboard
+    if ($found_user['role'] == "librarian") {
+      header("Location: librarian.php");
+    } else {
+      header("Location: index.php");
+    }
     exit();
   }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./Css/login.css">
-  <link rel="stylesheet" href="./Css/message.css">
-</head>
-<body>
-  <div class="container">
-    <div class="left">
-      <div class="card">
-    <div class="logo"><img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">BookWise</div>
-    <h2>Welcome Back to the BookWise</h2>
-    <p>Access the vast collection of resources, and stay updated</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BOOKSHELF</title>
+    <link rel="stylesheet" href="./Css/login.css">
+    <link rel="stylesheet" href="./Css/message.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="card">
+          <div class="logo"><img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="">BOOKSHELF</div>
+          <h2>Welcome Back to BOOKSHELF</h2>
+          <p>Access the vast collection of resources, and stay updated</p>
 
-    <?php if ($error != "") { ?>
-      <div class="error"><?php echo $error; ?></div>
-    <?php } ?>
+          <?php if ($error != "") { ?>
+            <div class="error"><?php echo $error; ?></div>
+          <?php } ?>
 
-    <form method="post">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="adrian@jsmastery.pro" value="<?php echo htmlspecialchars($email); ?>" required>
+          <form method="post">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="adrian@jsmastery.pro" value="<?php echo htmlspecialchars($email); ?>" required>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="At least 8 characters long" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="At least 8 characters long" required>
 
-      <button id="submit" type="submit">Login</button>
-    </form>
+            <button id="submit" type="submit">Login</button>
+          </form>
 
-    <div class="footer-text">
-      Don't have an account already? <a href="./registration.php">Register here</a>
+          <div class="footer-text">
+            Don't have an account already? <a href="./registration.php">Register here</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+      </div>
     </div>
-  </div>
-    </div>
-
-    <div class="right">
-    </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -2,3 +2,11 @@
 <Files ".env">
   Require all denied
 </Files>
+
+# Make the browser check for a newer CSS / JS file on every visit,
+# so changes show up without having to clear the cache
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

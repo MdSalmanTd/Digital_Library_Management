@@ -92,22 +92,22 @@ form input::placeholder {
 }
 
 #upload-btn {
-    display: none;
+  display: none;
 }
 
 .custom-upload-label {
-    display: inline-block;
-    background: #26293d;
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 18px;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-    font-weight: 500;
-    transition: 0.3s ease;
+  display: inline-block;
+  background: #26293d;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 /* .upload-btn {
@@ -145,7 +145,6 @@ button {
 button:hover {
   background: #e5e5e5;
 }
-
 
 .login {
   text-align: center;

@@ -4,3 +4,7 @@
 # Photos uploaded by users
 uploads/*
 !uploads/.htaccess
+
+# Book covers uploaded by librarians
+Assets/Images/covers/*
+!Assets/Images/covers/.htaccess

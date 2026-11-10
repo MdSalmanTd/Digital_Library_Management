@@ -38,6 +38,14 @@ if (!isset($search_by)) {
             <span>AiBuddy</span>
           </a>
         </li>
+        <?php if ($user['role'] == "librarian") { ?>
+          <li class="nav-item">
+            <a href="./librarian.php" class="<?php if (strpos(basename($_SERVER['PHP_SELF']), "librarian") === 0) echo 'active'; ?>">
+              <i class="fa-solid fa-user-tie"></i>
+              <span>Librarian</span>
+            </a>
+          </li>
+        <?php } ?>
       </ul>
     </nav>
 

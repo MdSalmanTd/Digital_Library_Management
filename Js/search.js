@@ -13,7 +13,7 @@ notFoundDiv.innerHTML = `
     <h2>Book Not Found</h2>
     <p>Sorry, the book you are looking for does not exist.</p>
 `;
-libraryBody.appendChild(notFoundDiv); 
+libraryBody.appendChild(notFoundDiv);
 
 function performSearch() {
   if (!bookItems.length) return;
@@ -64,6 +64,8 @@ searchInput?.addEventListener("input", performSearch);
 
 document
   .querySelectorAll("#select .options-list .options")
-  .forEach((opt) => opt.addEventListener("click", () => setTimeout(performSearch, 0)));
+  .forEach((opt) =>
+    opt.addEventListener("click", () => setTimeout(performSearch, 0)),
+  );
 
 document.addEventListener("DOMContentLoaded", performSearch);

@@ -1,7 +1,6 @@
 const inputs = document.querySelectorAll(".otp-inputs input");
 
 inputs.forEach((input, index) => {
-
   input.addEventListener("input", () => {
     if (input.value.length === 1 && index < inputs.length - 1) {
       inputs[index + 1].focus();

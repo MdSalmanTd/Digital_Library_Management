@@ -1,0 +1,4 @@
+# Book covers uploaded by librarians: never run PHP files from this folder
+<FilesMatch "\.(php|phtml|phar)$">
+  Require all denied
+</FilesMatch>

@@ -38,11 +38,8 @@ while ($row = $result->fetch_assoc()) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+    <title>Search - BOOKSHELF</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="./Css/style.css" />
     <link rel="stylesheet" href="./Css/search.css" />
     <link rel="stylesheet" href="./Css/notfound.css">
@@ -108,13 +105,7 @@ while ($row = $result->fetch_assoc()) {
                   <?php } else { ?>
                     <span class="status unavailable">Borrowed</span>
                   <?php } ?>
-                  <span class="location"
-                    ><i
-                      class="fa-solid fa-location-dot"
-                      style="color: #ff0000"
-                    ></i>
-                    <?php echo $book['location']; ?></span
-                  >
+                  <span class="location"><i class="fa-solid fa-location-dot" style="color: #ff0000"></i> <?php echo $book['location']; ?></span>
                 </div>
                 <a class="favorite" href="favorite.php?id=<?php echo $book['id']; ?>" title="Add to favorites">
                   <?php if (in_array($book['id'], $favorite_ids)) { ?>

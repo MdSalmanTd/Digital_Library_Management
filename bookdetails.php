@@ -29,10 +29,7 @@ $already_borrowed = $result->num_rows > 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKSHELF</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="./Css/style.css" />
     <link rel="stylesheet" href="./Css/bookdetails.css" />
     <link rel="stylesheet" href="./Css/message.css" />
@@ -49,10 +46,7 @@ $already_borrowed = $result->num_rows > 0;
       <div class="bdcontainer">
         <div class="book-details-container">
           <div class="book-cover">
-            <img
-              src="./Assets/Images/<?php echo $book['cover']; ?>"
-              alt="Book Cover"
-            />
+            <img src="./Assets/Images/<?php echo $book['cover']; ?>" alt="Book Cover" />
           </div>
           <div class="book-information">
             <h2><?php echo htmlspecialchars($book['title']); ?></h2>
@@ -73,45 +67,42 @@ $already_borrowed = $result->num_rows > 0;
             </div>
             <div class="availability-container">
 
-                <div class="availability">
-                  <h2>Availability</h2>
-                  <div class="avail-item">
-                    <?php if ($book['has_hardcopy']) { ?>
-                      <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
-                    <?php } else { ?>
-                      <i class="fa-solid fa-circle-xmark" style="color: red"></i>
-                    <?php } ?>
-                    <span>Hard Copy</span>
-                  </div>
-                  <div class="avail-item">
-                    <?php if ($book['has_ebook']) { ?>
-                      <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
-                    <?php } else { ?>
-                      <i class="fa-solid fa-circle-xmark" style="color: red"></i>
-                    <?php } ?>
-                    <span>E-Book</span>
-                  </div>
-                  <div class="avail-item">
-                    <?php if ($book['has_audiobook']) { ?>
-                      <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
-                    <?php } else { ?>
-                      <i class="fa-solid fa-circle-xmark" style="color: red"></i>
-                    <?php } ?>
-                    <span>Audio Book</span>
-                  </div>
-                </div>
-                <div class="status-location">
-                  <h2>Status</h2>
-                  <?php if ($book['available_copies'] > 0) { ?>
-                    <span class="status available">In-Shelf (<?php echo $book['available_copies']; ?> left)</span>
+              <div class="availability">
+                <h2>Availability</h2>
+                <div class="avail-item">
+                  <?php if ($book['has_hardcopy']) { ?>
+                    <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
                   <?php } else { ?>
-                    <span class="status unavailable">All copies borrowed</span>
+                    <i class="fa-solid fa-circle-xmark" style="color: red"></i>
                   <?php } ?>
-                  <span class="location"
-                    ><i class="fa-solid fa-location-dot" style="color: #ff0000"></i>
-                    <?php echo $book['location']; ?></span
-                  >
+                  <span>Hard Copy</span>
                 </div>
+                <div class="avail-item">
+                  <?php if ($book['has_ebook']) { ?>
+                    <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
+                  <?php } else { ?>
+                    <i class="fa-solid fa-circle-xmark" style="color: red"></i>
+                  <?php } ?>
+                  <span>E-Book</span>
+                </div>
+                <div class="avail-item">
+                  <?php if ($book['has_audiobook']) { ?>
+                    <i class="fa-solid fa-circle-check" style="color: #42bb4e"></i>
+                  <?php } else { ?>
+                    <i class="fa-solid fa-circle-xmark" style="color: red"></i>
+                  <?php } ?>
+                  <span>Audio Book</span>
+                </div>
+              </div>
+              <div class="status-location">
+                <h2>Status</h2>
+                <?php if ($book['available_copies'] > 0) { ?>
+                  <span class="status available">In-Shelf (<?php echo $book['available_copies']; ?> left)</span>
+                <?php } else { ?>
+                  <span class="status unavailable">All copies borrowed</span>
+                <?php } ?>
+                <span class="location"><i class="fa-solid fa-location-dot" style="color: #ff0000"></i> <?php echo $book['location']; ?></span>
+              </div>
             </div>
 
             <div class="book-action">
@@ -128,7 +119,7 @@ $already_borrowed = $result->num_rows > 0;
               <?php if ($book['read_url'] != "") { ?>
                 <button class="read-btn">
                   <a href="<?php echo htmlspecialchars($book['read_url']); ?>" target="_blank">
-                  Read Now
+                    Read Now
                   </a>
                 </button>
               <?php } ?>
@@ -136,22 +127,22 @@ $already_borrowed = $result->num_rows > 0;
 
           </div>
           <div class="about-auth">
-              <h2>About the Author</h2>
-              <div class="auth-name-img">
-                  <h3><?php echo htmlspecialchars($book['author']); ?></h3>
-                  <img src="./Assets/Images/<?php echo $book['cover']; ?>" alt="<?php echo htmlspecialchars($book['author']); ?>">
-              </div>
-              <p>
-                  <?php echo htmlspecialchars($book['author_bio']); ?>
-              </p>
+            <h2>About the Author</h2>
+            <div class="auth-name-img">
+              <h3><?php echo htmlspecialchars($book['author']); ?></h3>
+              <img src="./Assets/Images/<?php echo $book['cover']; ?>" alt="<?php echo htmlspecialchars($book['author']); ?>">
+            </div>
+            <p>
+              <?php echo htmlspecialchars($book['author_bio']); ?>
+            </p>
           </div>
         </div>
 
         <div class="about-book">
-            <h2>Book Details</h2>
-            <div class="about-header">
-              <h3>Overview</h3>
-            </div>
+          <h2>Book Details</h2>
+          <div class="about-header">
+            <h3>Overview</h3>
+          </div>
           <div class="about-content">
             <p>
               <?php echo htmlspecialchars($book['description']); ?>

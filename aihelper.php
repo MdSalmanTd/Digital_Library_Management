@@ -71,10 +71,7 @@ if ($question != "") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BOOKSHELF</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link rel="stylesheet" href="./Css/style.css" />
     <link rel="stylesheet" href="./Css/aihelper.css" />
   </head>
@@ -89,31 +86,31 @@ if ($question != "") {
         </div>
 
         <div class="aicards">
-            <div class="aicard1 aicard" onclick="location.href='aihelper.php?ask=Summarize a book'">
-                <h3>Summarize a Book</h3>
-                <div class="iconbg">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
+          <div class="aicard1 aicard" onclick="location.href='aihelper.php?ask=Summarize a book'">
+            <h3>Summarize a Book</h3>
+            <div class="iconbg">
+              <i class="fa-solid fa-book-open"></i>
             </div>
-            <div class="aicard2 aicard" onclick="location.href='aihelper.php?ask=Explore new genres'">
-                <h3>Explore New Genres</h3>
-                <div class="iconbg">
-                    <i class="fa-solid fa-compass"></i>
+          </div>
+          <div class="aicard2 aicard" onclick="location.href='aihelper.php?ask=Explore new genres'">
+            <h3>Explore New Genres</h3>
+            <div class="iconbg">
+              <i class="fa-solid fa-compass"></i>
             </div>
-        </div>
-        <div class="aicard3 aicard" onclick="location.href='aihelper.php?ask=Recommend me books'">
+          </div>
+          <div class="aicard3 aicard" onclick="location.href='aihelper.php?ask=Recommend me books'">
             <h3>Get Book Recommendations</h3>
             <div class="iconbg">
-                <i class="fa-solid fa-lightbulb"></i>
+              <i class="fa-solid fa-lightbulb"></i>
             </div>
           </div>
         </div>
 
         <form class="searchbox" action="aihelper.php" method="get">
-            <input type="text" name="ask" placeholder="Ask me anything..." value="<?php echo htmlspecialchars($question); ?>" />
-            <button type="submit" class="sendicon">
-                <i class="fa-solid fa-paper-plane"></i>
-            </button>
+          <input type="text" name="ask" placeholder="Ask me anything..." value="<?php echo htmlspecialchars($question); ?>" />
+          <button type="submit" class="sendicon">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
         </form>
 
         <div class="chat">
@@ -121,29 +118,29 @@ if ($question != "") {
             <div class="aioverview" style="display: block">
               <h2>AI Overview</h2>
               <div class="AiAnswer">
-                  <p><b>You asked:</b> <?php echo htmlspecialchars($question); ?></p>
-                  <p><?php echo htmlspecialchars($answer); ?></p>
+                <p><b>You asked:</b> <?php echo htmlspecialchars($question); ?></p>
+                <p><?php echo htmlspecialchars($answer); ?></p>
 
-                  <ul class="ai-list">
-                    <?php foreach ($answer_books as $book) { ?>
-                      <li>
-                        <a href="bookdetails.php?id=<?php echo $book['id']; ?>"><?php echo htmlspecialchars($book['title']); ?></a>
-                        by <?php echo htmlspecialchars($book['author']); ?> (<?php echo $book['rating']; ?>/5)
-                      </li>
-                    <?php } ?>
-                    <?php foreach ($answer_genres as $genre) { ?>
-                      <li>
-                        <a href="search.php?by=subject&q=<?php echo urlencode($genre['category']); ?>"><?php echo htmlspecialchars($genre['category']); ?></a>
-                        (<?php echo $genre['total']; ?> books)
-                      </li>
-                    <?php } ?>
-                  </ul>
+                <ul class="ai-list">
+                  <?php foreach ($answer_books as $book) { ?>
+                    <li>
+                      <a href="bookdetails.php?id=<?php echo $book['id']; ?>"><?php echo htmlspecialchars($book['title']); ?></a>
+                      by <?php echo htmlspecialchars($book['author']); ?> (<?php echo $book['rating']; ?>/5)
+                    </li>
+                  <?php } ?>
+                  <?php foreach ($answer_genres as $genre) { ?>
+                    <li>
+                      <a href="search.php?by=subject&q=<?php echo urlencode($genre['category']); ?>"><?php echo htmlspecialchars($genre['category']); ?></a>
+                      (<?php echo $genre['total']; ?> books)
+                    </li>
+                  <?php } ?>
+                </ul>
               </div>
             </div>
           <?php } ?>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
     <script src="./Js/index.js"></script>
   </body>
-  </html>
+</html>
