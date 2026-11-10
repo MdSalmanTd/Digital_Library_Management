@@ -99,6 +99,17 @@
     font-size: 16px;
 }
 
+.status-location .status{
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #42BB4E;
+}
+
+.status-location .status.unavailable{
+    background-color: #F27851;
+}
+
 .book-action{
     margin-top: 20px;
     display: flex;

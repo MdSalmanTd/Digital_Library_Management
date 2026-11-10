@@ -27,6 +27,7 @@ if (leftbtn && display) {
 
 
 
+const searchBy = document.querySelector("#search-by");
 const selectWrappers = document.querySelectorAll("#select");
 selectWrappers.forEach((wrapper) => {
   const displaySpan = wrapper.querySelector(".select-dropdown span");
@@ -35,9 +36,19 @@ selectWrappers.forEach((wrapper) => {
   optionItems.forEach((item) => {
     item.addEventListener("click", () => {
       if (displaySpan) displaySpan.textContent = item.textContent;
+      // Send the chosen option to search.php with the form
+      if (searchBy) searchBy.value = item.textContent.toLowerCase();
     });
   });
 });
+
+// Clicking the magnifying glass submits the search form
+const searchIcon = document.querySelector(".search-input i");
+if (searchIcon) {
+  searchIcon.addEventListener("click", () => {
+    searchIcon.closest("form").submit();
+  });
+}
 
 
 const langwrap = document.querySelectorAll(".langbar");

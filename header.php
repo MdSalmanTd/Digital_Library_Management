@@ -1,68 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not Found</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <link rel="stylesheet" href="./Css/style.css">
-    <link rel="stylesheet" href="./Css/notfound.css">
-</head>
-<body>
-     <nav class="sidebar">
+<?php
+// Shared sidebar + top bar. Needs $user, $user_photo and $first_name from check_login.php.
+// The search page sets $search_q and $search_by so the box keeps what was typed.
+if (!isset($search_q)) {
+  $search_q = "";
+}
+if (!isset($search_by)) {
+  $search_by = "all";
+}
+?>
+    <nav class="sidebar">
       <div class="logo">
         <img src="./Assets/Images/Screenshot 2025-11-11 113932.png" alt="" />
         <h2>BOOKSHELF</h2>
       </div>
       <ul class="nav-links">
         <li class="nav-item">
-          <a href="./index.html">
+          <a href="./index.php">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="./search.html">
+          <a href="./search.php">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span>Search</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="./yourshelf.html">
+          <a href="./yourshelf.php">
             <i class="fa-solid fa-swatchbook"></i>
             <span>My Self</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="./aihelper.html">
+          <a href="./aihelper.php">
             <i class="fa-brands fa-codepen"></i>
-            <span>Ai Helper</span>
+            <span>AiBuddy</span>
           </a>
         </li>
       </ul>
     </nav>
 
     <header class="top-nav">
-      <div class="searchbar">
+      <form class="searchbar" action="search.php" method="get">
         <div id="select">
           <div class="select-dropdown">
-            <span>ALL</span>
+            <span><?php echo htmlspecialchars(strtoupper($search_by)); ?></span>
             <i class="fa-solid fa-caret-down"></i>
           </div>
 
           <ul class="options-list">
+            <li class="options">All</li>
             <li class="options">Author</li>
             <li class="options">Title</li>
             <li class="options">Text</li>
             <li class="options">Subject</li>
           </ul>
         </div>
+        <input type="hidden" name="by" id="search-by" value="<?php echo htmlspecialchars($search_by); ?>" />
 
         <div class="search-input">
-          <input type="text" placeholder="Search" />
+          <input type="text" name="q" placeholder="Search" value="<?php echo htmlspecialchars($search_q); ?>" />
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-      </div>
+      </form>
       <div class="langbar">
         <div class="lang-dropdown">
           <p>Language</p>
@@ -70,9 +71,6 @@
         </div>
         <ul class="lang-list">
           <li class="lang-item">English</li>
-          <li class="lang-item">French</li>
-          <li class="lang-item">German</li>
-          <li class="lang-item">Spanish</li>
         </ul>
       </div>
       <div class="time">
@@ -87,28 +85,17 @@
       </div>
       <div class="profile-container">
         <div class="profile">
-          <img
-            id="profile-pic"
-            src="./Assets/Images/b7b6bb2c53f083ca7beb2acab7ee8a29.jpg"
-            alt="user-profile"
-          />
-          <p>Meow</p>
+          <img id="profile-pic" src="<?php echo $user_photo; ?>" alt="user-profile" />
+          <p><?php echo htmlspecialchars($first_name); ?></p>
           <i class="fa-solid fa-caret-down"></i>
         </div>
         <ul class="profile-options">
-          <li class="profile-item">View Profile</li>
-          <li class="profile-item">Logout</li>
+          <li class="profile-item">
+            <a href="./profile.php">View Profile</a>
+          </li>
+          <li class="profile-item">
+            <a href="./logout.php">Logout</a>
+          </li>
         </ul>
       </div>
     </header>
-    <main>
-        <div class="notfound-container">
-            <h1>No Results</h1>
-            <img src="./Assets/Images/dribbble_1.gif" alt="404 Not Found">
-            <h2>Book Not Found</h2>
-            <p>Sorry, the book you are looking for does not exist.</p>
-            <a href="./index.html" class="home-button">Go to Home</a>
-        </div>
-    </main>
-</body>
-</html>

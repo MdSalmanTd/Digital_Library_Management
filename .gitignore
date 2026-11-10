@@ -1,0 +1,6 @@
+# Real passwords stay on your computer / server, not on GitHub
+.env
+
+# Photos uploaded by users
+uploads/*
+!uploads/.htaccess

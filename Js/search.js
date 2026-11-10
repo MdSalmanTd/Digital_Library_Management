@@ -59,34 +59,11 @@ function performSearch() {
 }
 
 // EVENTS
+// Typing filters the rows on screen; pressing Enter searches the database (search.php)
 searchInput?.addEventListener("input", performSearch);
-searchInput?.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    performSearch();
-  }
-});
 
 document
   .querySelectorAll("#select .options-list .options")
   .forEach((opt) => opt.addEventListener("click", () => setTimeout(performSearch, 0)));
 
 document.addEventListener("DOMContentLoaded", performSearch);
-
-
-function wirePreviewButtons() {
-  document.querySelectorAll(".preview").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = "./bookdetails.html";
-    });
-  });
-}
-
-document.addEventListener("DOMContentLoaded", wirePreviewButtons);
-
-document.querySelectorAll(".favorite i").forEach((icon) => {
-  icon.addEventListener("click", () => {
-    icon.style.color = icon.style.color === "red" ? "grey" : "red";
-  });
-});

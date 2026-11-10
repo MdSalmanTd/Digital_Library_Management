@@ -1,0 +1,19 @@
+/* Error / success messages shown by the PHP pages */
+.error,
+.success {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.error {
+  background: #5c1f1f;
+  color: #ffb4b4;
+}
+
+.success {
+  background: #1f4d2b;
+  color: #b7f7d0;
+}

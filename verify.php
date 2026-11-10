@@ -15,12 +15,13 @@
           <p>Thank you</p>
           <div class="check"><span>✔</span></div>
          <p>You are Verified</p>
-         <button id="submit">Login</button>
+         <form action="login.php" method="get">
+           <button id="submit">Login</button>
+         </form>
   </div>
     </div>
 
     <div class="right"></div>
   </div>
-  <script src="./Js/verify.js"></script>
 </body>
 </html>

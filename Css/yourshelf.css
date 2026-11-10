@@ -47,6 +47,21 @@ h1{
     border-radius: 6px;
 }
 
+.shelf-item.active {
+    background-color: #F27851;
+    color: rgb(0, 0, 0);
+    border-radius: 6px;
+}
+
+.empty-shelf {
+    color: #9e9b9b;
+    font-size: 16px;
+}
+
+.empty-shelf a {
+    color: #F27851;
+}
+
 .more-container {
     position: relative;
 }

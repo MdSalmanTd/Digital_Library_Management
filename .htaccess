@@ -1,0 +1,4 @@
+# Don't let anyone open the .env file (database password) in the browser
+<Files ".env">
+  Require all denied
+</Files>

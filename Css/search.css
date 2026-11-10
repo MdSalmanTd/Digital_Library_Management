@@ -112,6 +112,9 @@
     border-radius: 4px;
     background-color: #42BB4E;
 }
+.status-location .status.unavailable {
+    background-color: #F27851;
+}
 .status-location .location {
   font-size: 14px;
 }

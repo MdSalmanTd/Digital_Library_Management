@@ -127,6 +127,8 @@
   position: absolute;
   right: 10px;
   padding: 10px;
+  border: none;
+  font-size: 16px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -231,6 +233,18 @@
     font-size: 14px;
     line-height: 1.7;
     color: #d1d5db;
+    margin-bottom: 10px;
+}
+
+.ai-list {
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 2;
+    color: #d1d5db;
+}
+
+.ai-list a {
+    color: #feb47b;
 }
 
 @keyframes fadeIn {
